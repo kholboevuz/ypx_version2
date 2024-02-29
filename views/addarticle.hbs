@@ -1,0 +1,320 @@
+<link rel="stylesheet" href="/css/add.css">
+<link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+<style>
+    #artautr,
+    #artkey,
+    #uplfile {
+        display: none;
+    }
+
+    ;
+</style>
+<main class="h-full pb-16 overflow-y-auto">
+    <br>
+    <div id="onepage" style="" class="container px-6 mx-auto grid">
+        <div class="mx-auto grid">
+            <a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+                href="https://t.me/Kholboev_uz">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    <span>Ishlab chiquvchi "Sirdaryo yoshlar texnoparki" </span>
+                </div>
+                <span>O'tish &RightArrow;</span>
+            </a>
+            <!-- Big section cards -->
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
+                Maqola yuborish
+            </h4>
+            <div class="min-w-0 p-4 text-white bg-purple-600 rounded-lg shadow-xs">
+                <h4 class="mb-4 font-semibold">
+                    Maqola yuborish shartlari
+                </h4>
+
+                <p style="font-size: 30px;"> Maqolada kо‘tarilgan muammolarning mazmuni, tadqiqot uslubining tavsifi,
+                    muallif tomonidan olingan
+                    natijalar, ma’lumotlar hamda xulosalar qisqa va aniq bо‘lishi kerak.</p>
+                <p style="font-size: 30px;"> Rasmiylashtirishga qо‘yiladigan talablar:</p>
+                <p style="font-size: 30px;">• Annotatsiya va kalit soʻzlar ko‘rsatib o‘tilishi lozim (uch tilda);</p>
+                <p style="font-size: 30px;">• Maqola matni Times New Roman shrifti, 12 oʻlchamida, 1,15 intervalda
+                    boʻlishi va 5 betdan kam
+                    bo‘lmasligi lozim.</p>
+            </div>
+            <div class="container">
+                <h4 class="heading  dark:text-gray-300" style="padding: 6px; font-size: 30px; text-align: center;">
+                    Maqola yuborish bo'yicha qo'llanma</h4>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DH9CO_VQwl8?si=FuNVumyrikDRA7Y4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <br>
+            <button
+                class="flex items-center justify-center px-2 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                aria-label="Like" onclick="nextpage()">
+                Shartlar bilan tanishdim <img
+                    src="https://internest.agency/wp-content/uploads/2023/11/Internest-Terms-and-Conditions.webp"
+                    width="50px" alt="">
+            </button>
+        </div>
+
+    </div>
+
+    <div style="" id="twopage" class="container px-6 mx-auto grid">
+
+        <a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+            href="https://t.me/Kholboev_uz">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                    </path>
+                </svg>
+                <span>Ishlab chiquvchi "Sirdaryo yoshlar texnoparki" </span>
+            </div>
+            <span>O'tish &RightArrow;</span>
+        </a>
+
+        <form action="/add?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+            <div id="artname" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                <label class="block mt-4 text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">Maqola nomi</span>
+                    <!-- focus-within sets the color for the icon when input is focused -->
+                    <div class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+                        <input
+                            class="block w-full pr-10 mt-1 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                            placeholder="Maqola nom" name="articlename" required />
+                        <div class="absolute inset-y-0 right-0 flex items-center mr-3 pointer-events-none">
+                            <i class="fa fa-signature"></i>
+                        </div>
+                    </div>
+                </label>
+                <br>
+                <div style="text-align: right;">
+                    <button type="button" onclick="autrpage()"
+                        class="flex items-center justify-center px-2 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red"
+                        aria-label="Like">
+                        Keyingi sahifa
+                    </button>
+                </div>
+            </div>
+
+            <div id="artautr" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                <label class="block mt-4 text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">Maqola a'zolari</span>
+                    <br><br>
+                    <div class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+                        <div id="inputContainer">
+                        </div>
+                    </div>
+                </label>
+                <div class="flex space-x-4">
+                    <button type="button" onclick="openModal()"
+                        class="flex items-center justify-center px-2 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        aria-label="Like">
+                        Maqola a'zosini qo'shish <i class="fas fa-plus"></i>
+                    </button>
+
+                    <button type="button" onclick="artnames()"
+                        class="flex items-center justify-center px-2 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red"
+                        aria-label="Like">
+                        Orqaga
+                    </button>
+                    <button type="button" onclick="artkeys()"
+                        class="flex items-center justify-center px-2 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red"
+                        aria-label="Like">
+                        Keyingi sahifa
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal hidden fixed inset-0 overflow-y-auto z-50">
+                <div class="flex items-center justify-center min-h-screen">
+                    <div class="modal-content bg-white p-8 w-96 rounded-lg shadow-lg">
+                        <div class="mb-4">
+                            <h2 class="text-lg font-semibold">Maqola azolari ma'lumotlari</h2>
+                        </div>
+                        <div id="modalInputs">
+                            <!-- Inputs will be added here -->
+                        </div>
+                        <div class="flex justify-end mt-6">
+                            <button onclick="closeModal()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md mr-2"
+                                type="button">Bekor qilish</button>
+                            <button onclick="saveData()" class="px-4 py-2 bg-purple-600 text-white rounded-md"
+                                type="button">Qo'shish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="artkey" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                <label class="block mt-4 text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">Maqola kalit so'zlari</span>
+                    <!-- focus-within sets the color for the icon when input is focused -->
+                    <div class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+                        <div id="inputContainerKeywords">
+                            <!-- This is where the keywords input field will be rendered -->
+                        </div>
+                        <br>
+                        <div class="flex space-x-4 mt-4">
+                            <button type="button" onclick="addInput()"
+                                class="flex items-center justify-center px-4 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                Kalit so'z qo'shish <i class="fas fa-plus ml-2"></i>
+                            </button>
+                            <button type="button" onclick="autrpage()"
+                                class="flex items-center justify-center px-4 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
+                                Orqaga
+                            </button>
+                            <button type="button" onclick="artupload()"
+                                class="flex items-center justify-center px-4 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
+                                Keyingi sahifa
+                            </button>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div id="uplfile" class="flex items-center justify-center w-full">
+                <label for="dropzone-file"
+                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-100 dark:bg-gray-700 hover:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/file-upload-5562805-4642599.png"
+                            width="150px" alt="">
+                        <p style="font-size: 25px;" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                class="font-semibold">Maqolani yuklash
+                                uchun
+                                bosing</span></p>
+                        <p style="font-size: 18px; color:red" class="text-xs text-gray-500 dark:text-gray-400">doc,
+                            .docx, .docs, .dox</p>
+                    </div>
+                    <input id="dropzone-file" name="file" type="file" class="hidden" accept=".doc, .docx, .docs, .dox"
+                        onchange="showFileName(event)" />
+
+                </label>
+
+
+            </div>
+            <br>
+            <div class="flex  flex-col w-full" id="fileCard" style="display: none;">
+                <div
+                    class="flex flex-col w-full h-30 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-100 dark:bg-gray-700 hover:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <div class="flex items-center justify-between p-4">
+                        <div class="flex items-center">
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/doc-file-5308367-4444796.png"
+                                width="80px" alt="">
+                            <h1 class="mb-2 text-sm text-gray-500 dark:text-gray-400" id="filename"
+                                style="font-size: 25px;"></h1>
+                        </div>
+                        <p id="delete" class="text-red-600 cursor-pointer" onclick="deleteFile()"
+                            style="font-size: 30px;"><i class="fa fa-trash"></i></p>
+                    </div>
+                </div>
+                <br>
+                <div id="btns" class="flex justify-end mb-auto"> <!-- Apply justify-end and mb-auto classes -->
+                    <button type="button" onclick="warning()"
+                        class="flex items-center justify-center px-4 py-2 text-lg font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                        Keyingi sahifa
+                    </button>
+                </div>
+            </div>
+
+            <div id="settings" style="display: none;"
+                class="px-4 py-3 mb-8 bg-white rounded-lg items-center justify-center shadow-md dark:bg-gray-800">
+                <span class="text-gray-700 dark:text-gray-400">Maqola sozlamalari</span>
+                <br><br>
+                <div class="grid grid-3 items-center justify-center">
+                    <label class="item-label">
+                        <input class="item-input" type="radio" name="public" value="true"
+                            aria-labelledby="delivery-0-name" aria-describedby="delivery-0-shipping delivery-0-price"
+                            checked>
+                        <span class="item-info">
+                            <span id="delivery-0-name" class="item-name">Ommaviy </span>
+                            <br>
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/public-relation-8684721-6945289.png?f=webp"
+                                alt="">
+                            <small id="delivery-0-shipping" class="item-shipping">Maqolangizni barcha ko'ra olishi
+                                mumkin!</small>
+                            <br><br>
+                        </span>
+                        {{!-- <strong id="delivery-0-price" class="item-price">$5.00</strong> --}}
+                    </label>
+                    <label class="item-label">
+                        <input class="item-input" type="radio" name="public" value="false"
+                            aria-labelledby="delivery-1-name" aria-describedby="delivery-1-shipping delivery-1-price">
+                        <span class="item-info">
+                            <span id="delivery-1-name" class="item-name">Shaxsiy</span>
+                            <br>
+
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/private-key-4658215-3900728.png?f=webp"
+                                alt="">
+                            <small id="delivery-1-shipping" class="item-shipping">Maqolangiz nomi, mualliflar, kalit
+                                so'zlar ochiq bo'ladi. Maqolangizni ko'ra olishmaydi </small>
+
+                        </span>
+                    </label>
+                    {{!-- <label class="item-label">
+                        <input class="item-input" type="radio" name="delivery" value="express"
+                            aria-labelledby="delivery-2-name" aria-describedby="delivery-2-shipping delivery-2-price">
+                        <span class="item-info">
+                            <span id="delivery-2-name" class="item-name">Express</span>
+                            <br>
+                            <small id="delivery-2-shipping" class="item-shipping">1 business day</small>
+                        </span>
+                        <strong id="delivery-2-price" class="item-price">$25.00</strong>
+                    </label> --}}
+                </div>
+                <button class="btn btn-lg btn-success"  onclick="submitForm()" type="submit"><span id="loading">Maqolani yuborish</span></button>
+            </div>
+
+
+
+        </form>
+        <br><br>
+        {{!-- <span id="open" style="display: none;">
+            <textarea name="textarea" id="default"></textarea>
+            <div class="px-4 py-3 mb-8 bg-purple rounded-lg shadow-md dark:bg-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                id="preview" style="display: none;"></div>
+        </span> --}}
+    </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.4/mammoth.browser.min.js"></script>
+
+<script>
+    function showFileName(event) {
+        const input = event.target;
+        if (input.files && input.files.length > 0) {
+            const fileName = input.files[0].name;
+            const fileCard = document.getElementById('fileCard');
+            const filename = document.getElementById('filename');
+            filename.innerHTML = fileName;
+            fileCard.style.display = 'flex';
+        }
+    }
+
+    function deleteFile() {
+        const fileCard = document.getElementById('fileCard');
+        fileCard.style.display = 'none';
+
+        // Clear the file input value
+        const input = document.getElementById('dropzone-file');
+        input.value = "";
+
+        // Reset file name display
+        const filename = document.getElementById('filename');
+        filename.innerHTML = "File name";
+    }
+</script>
+
+
+
+
+<script src="/js/addmodal.js"></script>
+<script src="/js/pages.js"></script>
+{{!--
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="/js/texteditor.js"></script> --}}

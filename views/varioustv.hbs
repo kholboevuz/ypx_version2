@@ -1,0 +1,15 @@
+<main class="h-full pb-16 overflow-y-auto pt-3">
+    <div class="container flex flex-col items-center px-6 mx-auto">
+        <video controls autoplay loop id="myVideo">
+            <source src="/assets/images/technovideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var video = document.getElementById('myVideo');
+                video.play();
+            });
+        </script>
+    </div>
+</main>

@@ -1,0 +1,278 @@
+<style>
+    #academic {
+        display: none;
+    }
+</style>
+<div class="mx-auto container">
+
+    <!-- Progress Form -->
+    <form id="progress-form" class="p-4 progress-form" method="post" action="/register?_csrf={{csrfToken}}" lang="en" novalidate>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <!-- Step Navigation -->
+        <div class="d-flex align-items-start mb-3 sm:mb-5 progress-form__tabs" role="tablist">
+            <button id="progress-form__tab-1" class="flex-1 px-0 pt-2 progress-form__tabs-item" type="button" role="tab"
+                aria-controls="progress-form__panel-1" aria-selected="true">
+                <span class="d-block step" aria-hidden="true">Step 1 <span class="sm:d-none">of 3</span></span>
+                Tafsilotlar
+            </button>
+            <button id="progress-form__tab-2" class="flex-1 px-0 pt-2 progress-form__tabs-item" type="button" role="tab"
+                aria-controls="progress-form__panel-2" aria-selected="false" tabindex="-1" aria-disabled="true">
+                <span class="d-block step" aria-hidden="true">Step 2 <span class="sm:d-none">of 3</span></span>
+                Ma'lumotlar
+            </button>
+            <button id="progress-form__tab-3" class="flex-1 px-0 pt-2 progress-form__tabs-item" type="button" role="tab"
+                aria-controls="progress-form__panel-3" aria-selected="false" tabindex="-1" aria-disabled="true">
+                <span class="d-block step" aria-hidden="true">Step 3 <span class="sm:d-none">of 3</span></span>
+                Tasdiqlash
+            </button>
+        </div>
+        <!-- / End Step Navigation -->
+
+        <!-- Step 1 -->
+        <section id="progress-form__panel-1" role="tabpanel" aria-labelledby="progress-form__tab-1" tabindex="0">
+            <div class="sm:d-grid sm:grid-col-2 sm:mt-3">
+                <div class="mt-3 sm:mt-0 form__field">
+                    <label for="first-name">
+                        Ismingiz
+                        <span data-required="true" aria-hidden="true"></span>
+                    </label>
+                    <input id="first-name" type="text" name="lastname" autocomplete="given-name" required>
+                </div>
+
+                <div class="mt-3 sm:mt-0 form__field">
+                    <label for="last-name">
+                        Familiyangiz
+                        <span data-required="true" aria-hidden="true"></span>
+                    </label>
+                    <input id="last-name" type="text" name="fristname" autocomplete="family-name" required>
+                </div>
+            </div>
+
+            <div class="mt-3 form__field">
+                <label for="email-address">
+                    Email
+                    <span data-required="true" aria-hidden="true"></span>
+                </label>
+                <input id="email-address" type="email" name="emailaddress" autocomplete="email" inputmode="email"
+                    required>
+            </div>
+
+            <div class="mt-1 form__field">
+                <label class="form__choice-wrapper">
+                    <input id="email-newsletter" type="checkbox" name="emailnewsletter" value="true" checked>
+                    <span>Ha, Email manzilimdan yangiliklarni olishda foydalanaman</span>
+                </label>
+            </div>
+
+            <div class="mt-3 form__field">
+                <label for="phone-number">
+                    Telefon raqam
+                </label>
+                <input id="phone-number" type="tel" name="phonenumber" inputmode="numeric" value="+998"
+                    placeholder="+998__-___-__-__" autocomplete="tel" maxlength="17">
+
+            </div>
+
+            <div class="d-flex align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+                <button type="button" data-action="next">
+                    Keyingi <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+        <!-- / End Step 1 -->
+
+        <!-- Step 2 -->
+        <section id="progress-form__panel-2" role="tabpanel" aria-labelledby="progress-form__tab-2" tabindex="0" hidden>
+            <div class="mt-3 form__field">
+                <label for="address">
+                    O'qish yoki ish joyingiz
+                    <span data-required="true" aria-hidden="true"></span>
+                </label>
+                <input id="address" type="text" name="eduinfo" autocomplete="shipping address-line1" required>
+            </div>
+
+            <div class="mt-3 form__field">
+                <label for="address-2">
+                    To'liq manzilingiz
+                </label>
+                <input id="address-2" type="text" name="fulladdress" autocomplete="shipping address-line2" required>
+            </div>
+
+            <div class="sm:d-grid sm:grid-col-3 sm:mt-3">
+                <div class="mt-3 sm:mt-0 form__field">
+                    <label for="address-city">
+                        Shaxar
+                        <span data-required="true" aria-hidden="true"></span>
+                    </label>
+                    <input id="address-city" type="text" name="addresscity" autocomplete="shipping address-level2"
+                        required>
+                </div>
+
+                <div class="mt-3 sm:mt-0 form__field">
+                    <label for="address-state">
+                        Viloyat
+                        <span data-required="true" aria-hidden="true"></span>
+                    </label>
+                    <select id="address-state" name="addressstate" autocomplete="shipping address-level1" required>
+                        <option value="" disabled selected>Iltimos tanlang</option>
+                        <option value="Andijon viloyati">Andijon viloyati</option>
+                        <option value="Buxoro viloyati">Buxoro viloyati</option>
+                        <option value="Fargʻona viloyati">Fargʻona viloyati</option>
+                        <option value="Jizzax viloyati">Jizzax viloyati</option>
+                        <option value="Xorazm viloyati">Xorazm viloyati</option>
+                        <option value="Namangan viloyati">Namangan viloyati</option>
+                        <option value="Navoiy viloyati">Navoiy viloyati</option>
+                        <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+                        <option value="Qoraqalpogʻiston Respublikasi">Qoraqalpogʻiston Respublikasi</option>
+                        <option value="Samarqand viloyati">Samarqand viloyati</option>
+                        <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+                        <option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
+                        <option value="Toshkent viloyati">Toshkent viloyati</option>
+                        <option value="Toshkent shahri">Toshkent shahri</option>
+                    </select>
+                </div>
+
+                <div class="mt-3 sm:mt-0 form__field">
+                    <label for="address-zip">
+                        Pochta kodi
+                        <span data-required="true" aria-hidden="true"></span>
+                    </label>
+                    <input id="address-zip" type="text" name="addresszip" autocomplete="shipping postal-code"
+                        inputmode="numeric" required>
+                </div>
+            </div>
+
+            <div
+                class="d-flex flex-column-reverse sm:flex-row align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+                <button type="button" class="mt-1 sm:mt-0 button--simple" data-action="prev">
+                    <i class="fa-solid fa-arrow-left"></i> Orqaga
+                </button>
+                <button type="button" data-action="next">
+                    Keyingi <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+        <!-- / End Step 2 -->
+
+        <!-- Step 3 -->
+        <section id="progress-form__panel-3" role="tabpanel" aria-labelledby="progress-form__tab-3" tabindex="0" hidden>
+            <div class="mt-3 form__field">
+                <label for="product-satisfaction">
+                    Ilgari maqola joylashtirganmisz?
+                    <span data-required="true" aria-hidden="true"></span>
+                </label>
+                <select id="product-satisfaction" name="sciensecheck" required>
+                    <option value="" disabled selected>Iltimos tanlang</option>
+                    <option value="true">Ha</option>
+                    <option value="false">Yo'q</option>
+                </select>
+            </div>
+
+            <div class="mt-3 form__field">
+                <label for="product-recommendation">
+                    Maqola yozishda necha yillik tajribaga egasiz?
+                    <span data-required="true" aria-hidden="true"></span>
+                </label>
+                <select id="product-recommendation" name="scienseyear" required>
+                    <option value="" disabled selected>Iltimos tanlang</option>
+                    <option value="1 yildan kam">1 yildan kam</option>
+                    <option value="2 yil">2 yil</option>
+                    <option value="3 yil">3 yil</option>
+                    <option value="4 yil">4 yil</option>
+                    <option value="5 yil va undan ortiq">5 yil va undan ortiq</option>
+                </select>
+            </div>
+
+            <fieldset id="product-purchase" class="mt-3 form__field">
+                <legend>
+                    Ilmiy unvoningiz bormi?
+                </legend>
+                <label class="form__choice-wrapper">
+                    <input type="checkbox" name="academic" value="true" id="ha-checkbox">
+                    <span>Ha </span>
+                </label>
+                <label class="form__choice-wrapper">
+                    <input type="checkbox" name="academic" value="false" id="yoq-checkbox">
+                    <span>Yo'q </span>
+                </label>
+            </fieldset>
+            <div class="mt-3 form__field" id="academic">
+                <label for="address">
+                    Ilmiy unvoningzni kiriting
+                    <span data-required="true" aria-hidden="true"></span>
+                </label>
+                <input id="academic-title" type="text" name="academicinfo" autocomplete="shipping address-line1" required>
+            </div>
+            <div class="mt-3 form__field">
+                <label for="product-feedback">
+                    O'zingiz haqingizda ma'lumot yozing
+                </label>
+                <textarea id="product-feedback" name="userdata" rows="5" required></textarea>
+            </div>
+
+            <div
+                class="d-flex flex-column-reverse sm:flex-row align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+                <button type="button" class="mt-1 sm:mt-0 button--simple" data-action="prev">
+                    <i class="fa-solid fa-arrow-left"></i> Orqaga
+                </button>
+                <button type="submit">
+                    Yaratish <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+        </section>
+        <!-- / End Step 3 -->
+
+
+    </form>
+    <!-- / End Progress Form -->
+
+</div>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script>
+    const phoneNumberInput = document.getElementById('phone-number');
+
+    phoneNumberInput.addEventListener('input', function (event) {
+        // Remove non-numeric characters from input
+        const cleanedValue = this.value.replace(/\D/g, '');
+
+        // Check if the cleaned value matches the expected pattern
+        const matched = cleanedValue.match(/^998(\d{0,2})(\d{0,3})(\d{0,2})(\d{0,2})$/);
+
+        if (matched) {
+            // Build the formatted phone number
+            let formattedValue = '+998';
+
+            for (let i = 1; i < matched.length; i++) {
+                if (matched[i].length > 0) {
+                    formattedValue += '-' + matched[i];
+                }
+            }
+
+            // Update the input value
+            this.value = formattedValue;
+        }
+    });
+
+</script>
+<script>
+    const haCheckbox = document.getElementById('ha-checkbox');
+    const yoqCheckbox = document.getElementById('yoq-checkbox');
+    const academic = document.getElementById('academic')
+
+    haCheckbox.addEventListener('change', function () {
+        if (haCheckbox.checked) {
+            yoqCheckbox.checked = false;
+            academic.style.display = 'block'
+        }
+    });
+
+    yoqCheckbox.addEventListener('change', function () {
+        if (yoqCheckbox.checked) {
+            haCheckbox.checked = false;
+            academic.style.display = 'none'
+
+        }
+    });
+</script>
+<script src="js/register.js"></script>

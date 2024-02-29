@@ -1,0 +1,30 @@
+<style>
+    .containers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .message {
+        margin-top: 20px;
+    }
+</style>
+<main class="h-full flex items-center justify-center">
+    <div class="containers px-2 mx-auto grid items-center justify-center text-center">
+        <img src="https://assets.materialup.com/uploads/bc4c9683-f623-42ef-9014-464ba0411c79/preview.png" width="400"
+            alt="">
+        <h2 class="my-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
+            Maqolangiz muvaffaqiyatli yuborildi
+            <p class="message">5 soniyadan so'ng asosiy sahifaga avtomatik o'tkaziladi</p>
+        </h2>
+    </div>
+</main>
+
+<script>
+    setTimeout(function () {
+        window.location.href = "/dashboard/main";
+    }, 5000);
+</script>
